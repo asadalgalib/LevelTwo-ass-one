@@ -77,3 +77,44 @@ console.log(student);
 বেশির ভাগ ক্ষেত্রে শুধুমাত্র Object define করার জন্য Interface ব্যবহার করাকে ভালো অভ্যেস বলে মনে করা হয়। তবে যখনই আপনার Union Types (|) বা Intersection Types (&) এর প্রয়োজন হবে তখনই ব্যবহার করুন। এই পার্থক্য গুলো মনে রাখলে আপনার আরও শক্তিশালী ও রক্ষাণাবেক্ষনযোগ্য হবে।
 
 <hr/>
+
+## Blog 2 : Use of the Key word "keyof" in TypeScript 
+
+### ১. ভূমিকা (Inroduction)
+
+Typescript - এ type safety নিশ্চিত করার জন্য keyof একটি শক্তিশালী অপারেটর। এটি আমাদেরকে runtime এরর এড়াতে সাহায্য করে। এই পোস্টে আমরা দেখবো কিভাবে keyof ব্যবহার করে আমরা object এর key গুলোকে type হিসেবে ব্যবহার করতে পারি এবং কোডকে আরো মজবুত করতে পারি।
+
+### ২. keyof কী?
+
+keyof হলো একটি index access অপারেটর। যখন এটি একটি object type এর উপর প্রয়োগ করা হয়, তখন এটি সেই object এর সকল key names গুলোকে sting literals union type হিসেবে প্রদান করে
+
+##### উদাহরণঃ 
+
+type User = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+type UserKeys = keyof User;
+// UserKeys = "name" | "age" | "email"
+
+### ৩. keyof এর ব্যবহার 
+
+keyof এর প্রধান ব্যবহার হলো generic function তৈরি করা, যা object এর যে কোনো property নিয়ে কাজ করতে পারে কিন্তু type safety ও বজায় রাখে
+
+উদাহরণ স্বরূপ, একটি function যা একটি object থেকে একটি property value তুলে আনেঃ
+
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key];
+}
+
+### ৪. keyof এর সুবিধা
+
+- <b> Type safety :  </b> keyof নিশ্চিত করে যে আপনি শুধুমাত্র এমন property নাম ব্যবহার করছেন যা object এ সত্যিই আছে। ভুল key ব্যবহার করলে কম্পাইলার এরর দেখাবে
+- <b> Autocompletion :  </b> Integrated Development Environment তে এটি property এর নাম সাজেশন দিয়ে দ্রুত কোড লিখতে সাহায্য করে
+- <b> Refactoring :  </b>যদি object টাইপের কোনো property এর নাম পরিবর্তন করা হয়, তবে keyof ব্যবহার করা সকল function স্বয়ংক্রিয় ভাবে সেই পরিবর্তন ধরে ফেলে
+
+### ৫. উপসংহার
+
+keyof Typescript এর জেনেরিক প্রোগ্রামিং এবং উন্নত টাইপিং কৌশলের জন্য অপরিহার্য। এটি আপনার কোডকে আরো নিরাপদ, আরো maintainable এবং ত্রুটিমুক্ত রাখতে সাহায্য করে। যখনই আপনি কোনো অবজেক্টের প্রোপার্টি এক্সেস করার জন্য একটি টাইপ নিরাপদ ফাংশন লিখতে চাইবেন, keyof হবে আপনার প্রথম পছন্দ। 
