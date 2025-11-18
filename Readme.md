@@ -8,7 +8,7 @@ TypeScript - এ ডাটা স্ট্রাকচার define করার
 
 Type Alias হলো একটি টাইপের জন্য একটি নাম নির্ধারণ করা। এটি সকল primitive type ডাটার জন্য স্ট্রাকচার তৈরি করতে পারে। 
 
-##### উদাহরণ ঃ 
+##### উদাহরণঃ
 
 type User = {
   name: string;
@@ -34,7 +34,7 @@ console.log(user);
 
 Interface হলো মূলত Object এর স্ট্রাকচার define করার জন্য তৈরি একটি কাস্টম টাইপ। এটি Object এর property ও টাইপ ঠিক রাখে এবং class এও implement করা যায়। একটি interface দিয়ে আরেকটি interface extend ও করা যায়।
 
-##### উদাহরণ ঃ 
+##### উদাহরণঃ 
 
 interface User {
   name: string;
@@ -55,9 +55,9 @@ console.log(student);
 
 ### ৪. Interface এবং Type alias এর মধ্যে মূল পার্থক্য 
 
-- <b> মারজিং ঃ</b>Interface বার বার একই নামে declear করলে merge হয়ে যায়
-- <b> বহুমুখিতা ঃ</b> Type Alias একই সাথে Union Types (|) এবং Intersection types (&) ব্যবহার করতে পারে
-- <b> এক্সটেনশন ঃ </b> Interface সাধারণত extends ব্যবহার করে এবং Type Alias সাধারণত Intersection (&) ব্যবহার করে
+- <b> মারজিংঃ</b>Interface বার বার একই নামে declear করলে merge হয়ে যায়
+- <b> বহুমুখিতাঃ</b> Type Alias একই সাথে Union Types (|) এবং Intersection types (&) ব্যবহার করতে পারে
+- <b> এক্সটেনশনঃ </b> Interface সাধারণত extends ব্যবহার করে এবং Type Alias সাধারণত Intersection (&) ব্যবহার করে
 
 ### ৫. কখন কোনটি ব্যবহার করবেন? 
 
@@ -75,3 +75,5 @@ console.log(student);
 ### ৬. উপসংহার 
 
 বেশির ভাগ ক্ষেত্রে শুধুমাত্র Object define করার জন্য Interface ব্যবহার করাকে ভালো অভ্যেস বলে মনে করা হয়। তবে যখনই আপনার Union Types (|) বা Intersection Types (&) এর প্রয়োজন হবে তখনই ব্যবহার করুন। এই পার্থক্য গুলো মনে রাখলে আপনার আরও শক্তিশালী ও রক্ষাণাবেক্ষনযোগ্য হবে।
+
+<hr/>
