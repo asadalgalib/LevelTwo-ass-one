@@ -1,4 +1,3 @@
-//* --------------------- Problem 1 ------------------------
 type FormatValue = string | number | boolean;
 const formatValue = (input: FormatValue): FormatValue => {
     if (typeof input === "string") {
@@ -16,7 +15,7 @@ const formatValue = (input: FormatValue): FormatValue => {
         }
     }
 }
-//* --------------------- Problem 2 ------------------------
+
 type GetLength = string | string[] | number[];
 const getLength = (input: GetLength): number => {
     if (Array.isArray(input)) {
@@ -27,7 +26,7 @@ const getLength = (input: GetLength): number => {
     }
     return -1;
 }
-//* --------------------- Problem 3 ------------------------
+
 class Person {
     name: string;
     age: number;
@@ -40,13 +39,13 @@ class Person {
         return person;
     }
 }
-//* --------------------- Problem 4 ------------------------
+
 type FilterByRating = Array<{ title: string, rating: number }>
 const filterByRating = (input: FilterByRating): FilterByRating => {
     const filteredArray = input.filter(item => item.rating >= 4);
     return filteredArray;
 }
-//* --------------------- Problem 5 ------------------------
+
 type FilterActiveUsers = Array<{ id: number, name: string, email: string, isActive: boolean }>
 const filterActiveUsers = (input: FilterActiveUsers): FilterActiveUsers => {
     const filteredUserArray = [];
@@ -57,7 +56,7 @@ const filterActiveUsers = (input: FilterActiveUsers): FilterActiveUsers => {
     }
     return filteredUserArray;
 }
-//* --------------------- Problem 6 ------------------------
+
 interface Book {
     title: string;
     author: string;
@@ -67,7 +66,7 @@ interface Book {
 const printBookDetails = (input: Book) => {
     console.log(`Title: ${input.title}, Author: ${input.author}, Published: ${input.publishedYear}, Available: ${input.isAvailable ? "Yes" : "No"}`);
 }
-//* --------------------- Problem 7 ------------------------
+
 type GetUniqueValues = string[] | number[]
 const getUniqueValues = (input1: GetUniqueValues, input2: GetUniqueValues): GetUniqueValues => {
     const newArray: GetUniqueValues = [];
@@ -91,7 +90,7 @@ const getUniqueValues = (input1: GetUniqueValues, input2: GetUniqueValues): GetU
     }
     return newArray;
 }
-//* --------------------- Problem 8 ------------------------
+
 type CalculateTotalPrice = Array<{ name: string, price: number, quantity: number, discount?: number }>
 const calculateTotalPrice = (input: CalculateTotalPrice) => {
     let totalPrice: number = 0;
